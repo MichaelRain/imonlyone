@@ -1,0 +1,73 @@
+<div class="header" style="/*background:url('assets/space2.jpg')*/">
+	<div class="nav" style="background-color: #060606c9;">
+		<div class="bg-mask-cover">
+			<div class="bg-mask" style="background: url(assets/bg.png);-webkit-background-size: cover;background-size: cover">
+		</div>
+		</div>
+		<h1 class="header-text" style="color: rgb(245, 245, 245);"> <%= @article.title %></h1>
+	</div>	
+</div>
+<div class="post-page" style="">
+<div class="post-col" style="">
+	<!--<div class="post-page-header" style="background:url('assets/space2.jpg')" id="<?php echo $posts[$id]['type']; ?>">
+		
+		<h1 class="header-text" style="color: rgb(245, 245, 245);">imonlyone</h1>
+
+	</div>-->
+<div class="innerText">
+<p><%= @article.text %></p>
+</div>
+
+
+<h2>Comments</h2>
+<div class='comments'>
+<% @article.comments.each do |comment| %>
+	<div class="comment">
+  <p class="comment-title">
+    <%= comment.commenter %>
+  </p>
+ 
+  <p class="comment-text">
+    <%= comment.body %>
+  </p>
+  </div>
+<% end %>
+</div>
+
+<h2>Add a comment:</h2>
+<%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+ 
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
+
+
+<!--<div class="comments">
+	<ul class="commentsList">
+		<li class="comment"><span class="nickname">MishaRain:</span>Коммент</li>
+		<li class="comment"><span class="nickname">MishaRain:</span>Коммент</li>
+		<li class="comment"><span class="nickname">MishaRain:</span>Коммент
+			<ul>
+			<li class="comment"><span class="nickname">MishaRain:</span>Коммент</li>
+			<li class="comment"><span class="nickname">MishaRain:</span>Коммент
+				<ul>
+				<li class="comment"><span class="nickname">MishaRain:</span>Коммент</li>
+				</ul>
+			</li>
+			</ul>
+		<li class="comment"><span class="nickname">MishaRain:</span>Коммент</li>
+	</ul>
+</div>-->
+</div>
+</div>

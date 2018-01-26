@@ -1,0 +1,36 @@
+<div class='header'>
+  <div class="nav">
+    <div class="bg-mask-cover">
+      <div class="bg-mask" style="background: url(<%root_url + 'assets/bg.png'%>);-webkit-background-size: cover;background-size: cover"></div>
+    </div>
+    <h1 class="header-text">imonlyone</h1>
+    <p class="titledesc" style="color: #7F4EA5;">code</p>
+    <p class="titledesc" style="color: #E1428E;">sex</p>
+    <p class="titledesc" style="color: #FFDE41">rock</p>
+  </div>  
+</div>
+<div class="posts-wrapper">
+  <ul class="postRow">
+  <% @articles.each do |article| %>
+    <li class="post" id="<?=$post['type']?>-block">
+      <div class="image" id="<?=$post['type']?>">
+        <div class="image-mask-cover">
+          <div class="image-mask"></div>
+        </div>
+        <h2 class="post-title"><%= article.title %></h2>
+        
+      </div>
+      <div class="post-content">
+        <div class="post-content-text"><%= article.text %></div>
+
+
+        <a href="<%= article_path(article) %>" class="readmore">Читать</a>
+        <%=# link_to 'Удалить', article_path(article),
+            #  method: :delete,
+             # class: "readmore"
+              %>
+      </div>
+    </li>
+    <% end %>
+  </ul> 
+</div>

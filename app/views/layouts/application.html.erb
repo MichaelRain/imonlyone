@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Staticvoid</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "main" %>
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Open+Sans+Condensed:300|Montserrat" rel="stylesheet">
+  </head>
+  <!--<div class='header'>
+	<div class="nav">
+		<div class="bg-mask-cover">
+			<div class="bg-mask" style="background: url(assets/bg.png);-webkit-background-size: cover;background-size: cover"></div>
+		</div>
+		<h1 class="header-text">imonlyone</h1>
+		<p class="titledesc" style="color: #7F4EA5;">code</p>
+		<p class="titledesc" style="color: #E1428E;">sex</p>
+		<p class="titledesc" style="color: #FFDE41">rock</p>
+	</div>	
+</div>-->
+  <body>
+    <%= yield %>
+
+    <section class="footer">
+</section>
+  </body>
+</html>
