@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
+	extend FriendlyId
 	has_many :comments
-  	validates :title, presence: true,
-    				  length: { minimum: 5 }
+	friendly_id :alias, use: :slugged
 end

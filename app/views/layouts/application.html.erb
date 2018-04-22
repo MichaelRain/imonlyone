@@ -6,10 +6,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag "main" %>
     <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Open+Sans+Condensed:300|Montserrat" rel="stylesheet">
   </head>
-  <!--<div class='header'>
+  <div class='header'>
 	<div class="nav">
 		<div class="bg-mask-cover">
 			<div class="bg-mask" style="background: url(assets/bg.png);-webkit-background-size: cover;background-size: cover"></div>
@@ -18,12 +17,20 @@
 		<p class="titledesc" style="color: #7F4EA5;">code</p>
 		<p class="titledesc" style="color: #E1428E;">sex</p>
 		<p class="titledesc" style="color: #FFDE41">rock</p>
-	</div>	
-</div>-->
+	</div>
+  <div class="user_panel">
+    <% if user_signed_in? %>
+    <span>Здравствуйте, <%= current_user.username %></span>
+    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+<% else %>
+    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+<% end %>	
+</div>
+</div>
   <body>
+  
     <%= yield %>
 
     <section class="footer">
 </section>
-  </body>
 </html>

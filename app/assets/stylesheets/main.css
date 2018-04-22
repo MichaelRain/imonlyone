@@ -352,3 +352,14 @@ span.nickname
     background-color: white;
     padding: 10px;
 }
+
+.user_panel {
+    color: white;
+    float: right;
+    font-size: 12px;
+    text-align: center;
+}
+
+.user_panel a {
+    color:white;
+}

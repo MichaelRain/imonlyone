@@ -1,17 +1,5 @@
-<section class="form">
-<%= form_with scope: :article, url: articles_path, local: true do |form| %>
-  <p>
-    <%= label_tag(:title, "Заголовок") %><br>
-    <%= form.text_field :title %>
-  </p>
- 
-  <p>
-    <%= label_tag(:title, "Текст") %><br>
-    <%= form.text_area :text %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
-</section>
+<h1>New Article</h1>
+
+<%= render 'form', article: @article %>
+
+<%= link_to 'Back', articles_path %>

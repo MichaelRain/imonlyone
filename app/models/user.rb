@@ -1,4 +1,12 @@
 class User < ApplicationRecord
-	before_save { self.email = email.downcase }
-	has_secure_password
+	has_many :comments
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+  validates :email,uniqueness: true 
+  validates :username,uniqueness: true
+  validates :username, length: { minimum: 2 }
+
+
 end
